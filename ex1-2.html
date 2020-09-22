@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>연습문제1-2</h2>
+    <script>
+        var name = prompt("이름을 입력하시오")
+        var height = prompt("키를 입력하시오");
+        var weight = prompt("체중을 입력하시오");
+        height_Meter = height / 100;
+        var bmi = weight / (height_Meter ^ 2);
+        if (bmi >= 30)
+            console.log(name + "님은 비만입니다. 체중관리 요망!!!");
+        else if (bmi < 30 && bmi >= 25) {
+            console.log(name + "님은 과체중입니다. 주의하세요~~!");
+
+        } else if (bmi < 25 && bmi >= 20) {
+            console.log(name + "님은 정상입니다.");
+
+        } else {
+            console.log(name + "님은 저체중입니다. 살좀 찌우셔야 겠는데요~~?");
+        }
+    </script>
+</body>
+
+</html>
