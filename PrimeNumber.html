@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeNumber</title>
+</head>
+
+<body>
+    <h2>PrimeNumber</h2>
+    <script>
+        var cnt = 0;
+        var input = prompt("소수인지 판별하고 싶은 수를 입력하시오!!")
+
+        for (var i = 1; i <= input; i++) {
+            if (input % i == 0) {
+                cnt++;
+            }
+
+        }
+        if (cnt > 2) {
+            document.write("입력한 수는 소수가 아닙니다.");
+            break
+        } else {
+            document.write("입력한 수는 소수입니다.")
+            break
+        }
+    </script>
+</body>
+
+</html>

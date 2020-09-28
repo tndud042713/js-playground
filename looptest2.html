@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looptest2</title>
+</head>
+
+<body>
+    <h2>1에서 100까지의 짝수들의 합</h2>
+    <script>
+        var sum = 0;
+        var i = 0
+        document.write("<h1>1에서 100까지의 짝수들의 합을 구하는 프로그램</h1><br>");
+        while (i < 100) {
+            if (i % 2 == 0) {
+                document.write("현재 짝수의값은 " + i + "이다!!<br>");
+                sum += i;
+            }
+            i++;
+        }
+        document.write("<h1>1에서 100까지의 짝수들의 합은" + sum + "이다.</h1><br>");
+    </script>
+</body>
+
+</html>
