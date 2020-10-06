@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gugudan4.html</title>
+    <title>gugudan6.html</title>
 
     <style>
         body {
@@ -25,12 +25,19 @@
 <body>
     <h2>웹페이지를 이용한 4,5단 출력</h2>
     <!-- 단 수를 입력받아야한다 -->
+
+
     <div>
+        출력할 단수 : <input type="text" id="num"> <br>
+        <button onclick="runGugudan()">확인</button>
+
         <script>
-            var a = prompt("출력하고 싶은 단을 입력하시오");
-            for (var i = 0; i <
-                10; i++) {
-                document.write(a + " x " + i + " = " + a * i + "<br>");
+            function runGugudan() {
+                var b = document.getElementById("num").value
+                var a = Number(b);
+                for (var i = 0; i < 10; i++) {
+                    document.write(a + " x " + i + " = " + a * i + "<br>");
+                }
             }
         </script>
     </div>
