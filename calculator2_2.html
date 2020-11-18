@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>문자열 계산기 구현하기</h1>
+    <div>
+        첫번째 수: <input type="text" id="n1">
+        첫번째 수: <input type="text" id="n2">
+        <button onclick="clac()">실행</button>
+    </div>
+    <div id ="output">수영</div>
+
+    <script>
+        function main() {
+            console.log("calculator1")
+            var out = document.getElementById("output");
+            var str = "";
+            str += "<h2>계산기 구현하기</h2>";
+            
+            var n1 = Number(prompt("첫번째 값을 입력해 주세요."));
+            var n2 = Number(prompt("두번째 값을 입력해 주세요."));
+            str += "합: "+(n1+n2)+"<br>";
+            str += "차: "+(n1-n2)+"<br>";
+            str += "곱: "+(n1*n2)+"<br>";
+            str += "제: "+(n1/n2)+"<br>";
+
+            out.innerHTML = str;//자바스크립트 
+        }
+        main();
+    </script>
+</body>
+
+</html>
