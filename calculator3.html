@@ -18,7 +18,7 @@
         <input type="text" id="n2"><br>
         <button onclick="clac()">실행</button>
     </div>
-    <div id ="output">수영</div>
+    <div id ="output">Created by Suyoung</div>
 
     <script>
         function clac(){
@@ -34,16 +34,16 @@
             // alert('선택된 옵션 text 값=' + target.options[target.selectedIndex].text);
 
             if(target.options[target.selectedIndex].text==='+'){
-                str += "합" + (n1+n2) + "<br>";
+                str += "합 : " + (n1+n2) + "<br>";
             }
             else if(target.options[target.selectedIndex].text==='-'){
-                str += "차" + (n1-n2) + "<br>";
+                str += "차 : " + (n1-n2) + "<br>";
             }
             else if(target.options[target.selectedIndex].text==='*'){
-                str += "곱" + (n1*n2) + "<br>";
+                str += "곱 : " + (n1*n2) + "<br>";
             }
             else if(target.options[target.selectedIndex].text==='/'){
-                str += "제" + (n1/n2) + "<br>";
+                str += "제 : " + (n1/n2) + "<br>";
             }
         
             out.innerHTML=str;
