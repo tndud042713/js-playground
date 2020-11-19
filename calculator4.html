@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            background-color: azure;
+        }
+        #output{
+            font-size:20px;
+            color:#271aa1;
+        }
+        
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>문자열 계산기 구현하기</h1>
+
+    <div id="output">Created by Suyoung</div>
+
+    <script>
+        var out = document.getElementById("output");
+        var result = 0;
+        var a = Number(prompt("첫번째 숫자를 입력하시오"));
+        var str = "" + a + "";
+
+        while (true) {
+            var operator = prompt("연산자를 입력하시오");
+            var op = operator;
+            if (op === "q") {
+                str += "<br>" + "프로그램을 종료합니다";
+                break;
+            }
+            var b = Number(prompt("수을 입력하시오"));
+
+
+
+            if (op === "+") {
+                result = a + b;
+                str += " + " + b;
+            }
+            else if (op === "-") {
+                result = a - b;
+                str += " - " + b;
+            }
+            else if (op === "*") {
+                result = a * b;
+                str += " x " + b;
+            }
+            else if (op === "/") {
+                result = a / b;
+                str += " ÷ " + b;
+            }
+            a = result;
+        }
+        str+= "<b><br>계산한 결과는 " + result + "입니다.</b>";
+        out.innerHTML = str;
+
+    </script>
+</body>
+
+</html>
