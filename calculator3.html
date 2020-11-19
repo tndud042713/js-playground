@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>문자열 계산기 구현하기</h1>
+    <div>
+        <input type="text" id="n1">
+        <select name="operator" id="op">
+            <option value="+" selected>+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>            
+            <option value="/">/</option>            
+        </select>
+        <input type="text" id="n2"><br>
+        <button onclick="clac()">실행</button>
+    </div>
+    <div id ="output">수영</div>
+
+    <script>
+        function clac(){
+            var str1 = document.getElementById('n1').value;
+            var str2 = document.getElementById('n2').value;
+            var n1 = Number(str1);
+            var n2 = Number(str2);
+
+            var out = document.getElementById('output');
+            var str = "";
+            var target = document.getElementById('op')
+            
+            // alert('선택된 옵션 text 값=' + target.options[target.selectedIndex].text);
+
+            if(target.options[target.selectedIndex].text==='+'){
+                str += "합" + (n1+n2) + "<br>";
+            }
+            else if(target.options[target.selectedIndex].text==='-'){
+                str += "차" + (n1-n2) + "<br>";
+            }
+            else if(target.options[target.selectedIndex].text==='*'){
+                str += "곱" + (n1*n2) + "<br>";
+            }
+            else if(target.options[target.selectedIndex].text==='/'){
+                str += "제" + (n1/n2) + "<br>";
+            }
+        
+            out.innerHTML=str;
+        }
+    </script>
+</body>
+
+</html>
