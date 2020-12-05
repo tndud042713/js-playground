@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: azure;
+        }
+
+        #output {
+            font-size: 20px;
+            color: #271aa1;
+        }
+    </style>
+    <title>한 줄 계산기</title>
+</head>
+
+<body>
+    <h1>한 줄 계산기 구현하기</h1>
+
+    <div>
+        입력 : <input type="text" id="n1">
+        <button onclick="main()">계산</button>
+    </div>
+
+    <div id="output"><br>Created by Suyoung</div>
+
+
+    <script>
+        function input() {
+            str1 = document.getElementById('n1').value;
+            n1 = str1;
+            console.log(n1);
+            Arr2 = splitNum(n1);
+            result = calc(Arr2);
+            return result;
+        }
+
+        function op(operator, Ar2){
+            if(operator==='+'){
+                result += Ar2;
+                return result;
+            }else if(operator==='-'){
+                result -= Ar2;
+                return result;
+            }else if(operator==='*'){
+                result *= Ar2;
+                return result;
+            }else if(operator==='/'){
+                result /= Ar2;
+                return result;
+            }
+        }
+        
+
+        function calc(Arr2){
+            result = Number(Arr2[0]);
+            for(var i=1;i<Arr2.length;i++){
+                if(i%2==1){
+                    operator = Arr2[i];
+                }else{
+                    result = op(operator,Number(Arr2[i]));                    
+                }
+            }
+            return result;
+        }
+
+        function splitNum(n1) {
+            var Arr1 = n1.split(" ");
+            console.log(Arr1);
+            return Arr1;
+        }
+
+        function main() {
+            result = input();
+            out = document.getElementById('output'); // 화면에 출력하기 위한 output
+            str = "";
+
+            str += "<br>" + n1 + "=" + result;
+
+            out.innerHTML = str;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
