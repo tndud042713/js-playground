@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js playgraound</title>
+</head>
+<body>
+    <h1>Js playgraound</h1>
+    <script>
+        var fact = function(n){
+            if(n<0){
+                return NaN;
+            }else if(n==1 || n==0){
+                return 1;
+            }else{
+                return n*fact(n-1);
+            }
+        }
+
+        alert("1부터 4까지의 곱은 : "+fact(4)+"입니다.");
+    </script>
+</body>
+</html>
