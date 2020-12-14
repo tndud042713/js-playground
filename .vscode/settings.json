@@ -6,7 +6,7 @@
     "terminal.integrated.shell.windows":
     "C:\\Windows\\system32\\cmd.exe",
     "files.autoSave": "off",
-    "workbench.colorTheme": "Django Theme",
+    "workbench.colorTheme": "Atom One Light",
     "files.autoGuessEncoding": true,
     "window.zoomLevel": 0,
     "editor.wordWrap": "on",
