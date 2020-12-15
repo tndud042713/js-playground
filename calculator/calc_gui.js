@@ -14,17 +14,10 @@ var clickNumbers = function(event){
     switch(str){
         case 'BS':
             input.array.pop();
-        break;
-        
+        break;        
         case '+':
-            input.array.push(' '+str+' ');
-            break;
         case '-':
-            input.array.push(' '+str+' ');
-            break;
         case '*':
-            input.array.push(' '+str+' ');
-            break;
         case '/':
             input.array.push(' '+str+' ');
             break;
