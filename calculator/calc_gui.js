@@ -11,19 +11,26 @@ output.text = document.getElementById('output');
 var clickNumbers = function(event){
     var str = event.target.innerHTML;
     console.log(str);
-    switch(str){
-        case 'BS':
-            input.array.pop();
-        break;        
-        case '+':
-        case '-':
-        case '*':
-        case '/':
-            input.array.push(' '+str+' ');
-            break;
-        default:
-           input.array.push(str); 
+    if(str==='BS'){
+        input.array.pop();
+    }else if (str ==='+'||str ==='-'||str ==='*'||str ==='/'){
+        input.array.push(' '+str+' ');
+    }else{
+        input.array.push(str); 
     }
+    // switch(str){
+    //     case 'BS':
+    //         input.array.pop();
+    //     break;        
+    //     case '+':
+    //     case '-':
+    //     case '*':
+    //     case '/':
+    //         input.array.push(' '+str+' ');
+    //         break;
+    //     default:
+    //        input.array.push(str); 
+    // }
     if(input.array.length==0){
         output.text.innerHTML = "Empty";
     }else{
