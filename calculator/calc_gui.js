@@ -82,7 +82,7 @@ var clickNumbers = function (event) {
     }
 
     if (input.isEmpty()) {
-        output.text.innerHTML = "Empty";
+        output.text.innerHTML = "0"; //"Empty 대신 0이 나오게 해줌"
     } else {
         output.display();
         // output.text.innerHTML = input.getInput();
