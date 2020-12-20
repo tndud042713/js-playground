@@ -32,8 +32,26 @@
 
     <script>
         var str = document.getElementById('word1').innerHTML;
+        var strCompare = document.getElementById('word1').innerHTML;
         var word2 = document.getElementById('word2');
+        var checkstr = document.getElementById('check');
         var str2 = "";
+
+        var equalfunc = function (str) {
+            var CompareNum=0;
+            for (i = 0; i < str.length; i++) {
+                if (str[i] == strCompare[i]) {
+                    CompareNum+=1;
+                }else{
+                    CompareNum+=0;
+                }
+            }
+            if(CompareNum==str.length){
+                checkstr.innerHTML = "일치합니다";
+            }else{
+                checkstr.innerHTML = "일치하지않습니다";
+            }
+        }
 
         var printfunc = function () {
             for (var i = 0; i < str.length; i++) {
@@ -51,32 +69,48 @@
             }
         };
 
-        var deleteWord2 = function() {
-            word2.innerHTML = " ";     
+        var deleteWord = function () {
+            word2.innerHTML = " ";
         };
-
-        printfunc();
-        
+        printfunc(); // 첫 단어 화면 출력    
 
         var swap = function (event) {
             console.log('swap');// 확인용 콘솔
-            deleteWord2();
-            var str2=[];
-            for(j=0;j<str.length;j++){
-                str2[j]=str[str.length-1-j];
+            deleteWord();
+            var str2 = [];
+            for (j = 0; j < str.length; j++) {
+                str2[j] = str[str.length - 1 - j];
             }
             console.log(str2);
             printfunc2(str2);
-            str=str2;                     
+            str = str2;
+            equalfunc(str);
         };
 
         var R_shift = function (event) {
             console.log('R_shift');//확인용 콘솔
-            printfunc();                              
+            deleteWord();
+            var str2 = [];
+            for (j = 0; j < str.length; j++) {
+                str2[j] = str[j - 1];
+            }
+            str2[0] = str[str.length - 1];
+            printfunc2(str2);
+            str = str2;
+            equalfunc(str);
         };
 
         var L_shift = function (event) {
-            console.log('L_hift');//확인용 콘솔
+            console.log('R_shift');//확인용 콘솔
+            deleteWord();
+            var str2 = [];
+            for (j = 0; j < str.length; j++) {
+                str2[j] = str[j + 1];
+            }
+            str2[str.length - 1] = str[0];
+            printfunc2(str2);
+            str = str2;
+            equalfunc(str);
         };
 
     </script>
