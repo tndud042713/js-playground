@@ -2,13 +2,15 @@ var word1 = document.getElementById('word1'); // answer
 var word2 = document.getElementById('word2'); // buttons
 var check = document.getElementById('check'); // word1 === word2? 조건을 위해서 필요함
 var progress = document.getElementById('progress'); // progress check
-
+var time = document.getElementById('time');
 //game objects
 var game = {
     'btns': [],
     'maxPlay': 3,
     'current': 0
 };
+
+game.startTime = Date.now(); //시간을 받음
 game.words = 'apple,linux,javascript,tutorial,baby,girlfriend,legend'.split(','); //이렇게 하면 배열에 저것들을 넣을 수 있음
 
 //choose 1 word from words;
@@ -101,7 +103,9 @@ game.progress = function(){
         progress.innerHTML = str; // O를 progress 파트에 추가한다.
     }
     if (game.current == game.maxPlay){
-        alert("Good! Thank you for playing");
+        var sec = (Date.now() - game.startTime)/1000; //게임 시작시간부터 세문제를 맞출때 까지의 시간
+        alert("Good! Your Record : "+ sec + "초");
+        clearInterval(x);
     }
 };
 //event handler for swap button
@@ -126,9 +130,17 @@ game.shuffle = function () {
     if (toggle) {
         game.swap();
     }
-    var n = Math.floor(Math.random() * (game.answer.length-1));
+    var rmax = Math.floor(game.answer.length -2,1);
+    var n = Math.floor(Math.random() * rmax)+1;
     for (var i = 0; i < n; i++) {
         game.rshift();
     }
 };
 game.shuffle(); // 위에 만들어준 함수 호출
+
+var updateTime = function(){
+    var now = Date.now() - game.startTime;
+    time.innerHTML = now / 1000 + "s";
+}
+
+var x = setInterval(updateTime, 50); //50밀리초마다 갱신
